@@ -1,0 +1,15 @@
+{
+	"name": "dtrbj5ocryzdft5ypocws1-WorkspaceDefaultStorage",
+	"type": "Microsoft.Synapse/workspaces/linkedservices",
+	"properties": {
+		"typeProperties": {
+			"url": "https://dtrbj5ocryzdft5ypoc.dfs.core.windows.net/"
+		},
+		"type": "AzureBlobFS",
+		"connectVia": {
+			"referenceName": "AutoResolveIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		},
+		"annotations": []
+	}
+}
