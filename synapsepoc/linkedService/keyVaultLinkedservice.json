@@ -1,6 +1,12 @@
 {
 	"name": "keyVaultLinkedservice",
 	"properties": {
+		"parameters": {
+			"KeyVaultName": {
+				"type": "string",
+				"defaultValue": "kvdtrwol5bg6xm2xfkpoc"
+			}
+		},
 		"annotations": [],
 		"type": "AzureKeyVault",
 		"typeProperties": {
