@@ -2,7 +2,7 @@
 	"name": "keyVaultLinkedservice",
 	"properties": {
 		"parameters": {
-			"KeyVaultName": {
+			"keyVaultName": {
 				"type": "string",
 				"defaultValue": "kvdtrwol5bg6xm2xfkpoc"
 			}
