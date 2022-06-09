@@ -1,7 +1,7 @@
 {
-	"name": "CustomerData",
+	"name": "Date",
 	"properties": {
-		"Name": "CustomerData",
+		"Name": "Date",
 		"EntityType": "TABLE",
 		"Namespace": {
 			"DatabaseName": "adworks"
@@ -14,7 +14,7 @@
 		"StorageDescriptor": {
 			"Columns": [
 				{
-					"Name": "CustomerKey",
+					"Name": "DateKey",
 					"OriginDataTypeName": {
 						"TypeName": "long",
 						"IsNullable": false,
@@ -25,7 +25,18 @@
 					}
 				},
 				{
-					"Name": "CustomerId",
+					"Name": "Date",
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsNullable": true,
+						"IsComplexType": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "FiscalYear",
 					"OriginDataTypeName": {
 						"TypeName": "string",
 						"IsNullable": true,
@@ -37,7 +48,7 @@
 					}
 				},
 				{
-					"Name": "Customer",
+					"Name": "FiscalQuarter",
 					"OriginDataTypeName": {
 						"TypeName": "string",
 						"IsNullable": true,
@@ -49,7 +60,7 @@
 					}
 				},
 				{
-					"Name": "City",
+					"Name": "Month",
 					"OriginDataTypeName": {
 						"TypeName": "string",
 						"IsNullable": true,
@@ -61,7 +72,7 @@
 					}
 				},
 				{
-					"Name": "StateProvince",
+					"Name": "FullDate",
 					"OriginDataTypeName": {
 						"TypeName": "string",
 						"IsNullable": true,
@@ -73,26 +84,13 @@
 					}
 				},
 				{
-					"Name": "CountryRegion",
+					"Name": "MonthKey",
 					"OriginDataTypeName": {
-						"TypeName": "string",
+						"TypeName": "long",
 						"IsNullable": true,
 						"IsComplexType": false,
-						"Length": 8000,
 						"Properties": {
-							"HIVE_TYPE_STRING": "string"
-						}
-					}
-				},
-				{
-					"Name": "PostalCode",
-					"OriginDataTypeName": {
-						"TypeName": "string",
-						"IsNullable": true,
-						"IsComplexType": false,
-						"Length": 8000,
-						"Properties": {
-							"HIVE_TYPE_STRING": "string"
+							"HIVE_TYPE_STRING": "long"
 						}
 					}
 				}
@@ -103,7 +101,7 @@
 				"FormatType": "csv",
 				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
 				"Properties": {
-					"path": "abfss://public@dtrwol5bg6xm2xfkpoc.dfs.core.windows.net//adworks/CustomerData",
+					"path": "abfss://public@dtrwol5bg6xm2xfkpoc.dfs.core.windows.net//adworks/Date",
 					"delimiter": ",",
 					"multiLine": "false",
 					"firstRowAsHeader": "false",
@@ -114,7 +112,7 @@
 			},
 			"Source": {
 				"Provider": "ADLS",
-				"Location": "abfss://public@dtrwol5bg6xm2xfkpoc.dfs.core.windows.net//adworks/CustomerData",
+				"Location": "abfss://public@dtrwol5bg6xm2xfkpoc.dfs.core.windows.net//adworks/Date",
 				"Properties": {
 					"LinkedServiceName": "dtrwol5bg6xm2xfkpocws1-WorkspaceDefaultStorage",
 					"LocationSetToDatabaseDefault": false
@@ -131,7 +129,7 @@
 		"Properties": {
 			"Description": "",
 			"DisplayFolderInfo": "{\"name\":\"Others\",\"colorCode\":\"\"}",
-			"PrimaryKeys": "CustomerKey",
+			"PrimaryKeys": "DateKey",
 			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,

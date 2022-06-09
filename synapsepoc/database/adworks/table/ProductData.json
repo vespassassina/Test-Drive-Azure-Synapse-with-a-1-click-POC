@@ -1,7 +1,7 @@
 {
-	"name": "CustomerData",
+	"name": "ProductData",
 	"properties": {
-		"Name": "CustomerData",
+		"Name": "ProductData",
 		"EntityType": "TABLE",
 		"Namespace": {
 			"DatabaseName": "adworks"
@@ -14,85 +14,107 @@
 		"StorageDescriptor": {
 			"Columns": [
 				{
-					"Name": "CustomerKey",
+					"Name": "Category",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsNullable": true,
+						"IsComplexType": false,
+						"Length": 8000,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "Subcategory",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsNullable": true,
+						"IsComplexType": false,
+						"Length": 8000,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "Model",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsNullable": true,
+						"IsComplexType": false,
+						"Length": 8000,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ListPrice",
+					"OriginDataTypeName": {
+						"TypeName": "float",
+						"IsNullable": true,
+						"IsComplexType": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "float"
+						}
+					}
+				},
+				{
+					"Name": "Color",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsNullable": true,
+						"IsComplexType": false,
+						"Length": 8000,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "StandardCost",
+					"OriginDataTypeName": {
+						"TypeName": "float",
+						"IsNullable": true,
+						"IsComplexType": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "float"
+						}
+					}
+				},
+				{
+					"Name": "Product",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsNullable": true,
+						"IsComplexType": false,
+						"Length": 8000,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "SKU",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsNullable": true,
+						"IsComplexType": false,
+						"Length": 8000,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ProductKey",
 					"OriginDataTypeName": {
 						"TypeName": "long",
 						"IsNullable": false,
 						"IsComplexType": false,
 						"Properties": {
 							"HIVE_TYPE_STRING": "long"
-						}
-					}
-				},
-				{
-					"Name": "CustomerId",
-					"OriginDataTypeName": {
-						"TypeName": "string",
-						"IsNullable": true,
-						"IsComplexType": false,
-						"Length": 8000,
-						"Properties": {
-							"HIVE_TYPE_STRING": "string"
-						}
-					}
-				},
-				{
-					"Name": "Customer",
-					"OriginDataTypeName": {
-						"TypeName": "string",
-						"IsNullable": true,
-						"IsComplexType": false,
-						"Length": 8000,
-						"Properties": {
-							"HIVE_TYPE_STRING": "string"
-						}
-					}
-				},
-				{
-					"Name": "City",
-					"OriginDataTypeName": {
-						"TypeName": "string",
-						"IsNullable": true,
-						"IsComplexType": false,
-						"Length": 8000,
-						"Properties": {
-							"HIVE_TYPE_STRING": "string"
-						}
-					}
-				},
-				{
-					"Name": "StateProvince",
-					"OriginDataTypeName": {
-						"TypeName": "string",
-						"IsNullable": true,
-						"IsComplexType": false,
-						"Length": 8000,
-						"Properties": {
-							"HIVE_TYPE_STRING": "string"
-						}
-					}
-				},
-				{
-					"Name": "CountryRegion",
-					"OriginDataTypeName": {
-						"TypeName": "string",
-						"IsNullable": true,
-						"IsComplexType": false,
-						"Length": 8000,
-						"Properties": {
-							"HIVE_TYPE_STRING": "string"
-						}
-					}
-				},
-				{
-					"Name": "PostalCode",
-					"OriginDataTypeName": {
-						"TypeName": "string",
-						"IsNullable": true,
-						"IsComplexType": false,
-						"Length": 8000,
-						"Properties": {
-							"HIVE_TYPE_STRING": "string"
 						}
 					}
 				}
@@ -103,7 +125,7 @@
 				"FormatType": "csv",
 				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
 				"Properties": {
-					"path": "abfss://public@dtrwol5bg6xm2xfkpoc.dfs.core.windows.net//adworks/CustomerData",
+					"path": "abfss://public@dtrwol5bg6xm2xfkpoc.dfs.core.windows.net//adworks/ProductData",
 					"delimiter": ",",
 					"multiLine": "false",
 					"firstRowAsHeader": "false",
@@ -114,7 +136,7 @@
 			},
 			"Source": {
 				"Provider": "ADLS",
-				"Location": "abfss://public@dtrwol5bg6xm2xfkpoc.dfs.core.windows.net//adworks/CustomerData",
+				"Location": "abfss://public@dtrwol5bg6xm2xfkpoc.dfs.core.windows.net//adworks/ProductData",
 				"Properties": {
 					"LinkedServiceName": "dtrwol5bg6xm2xfkpocws1-WorkspaceDefaultStorage",
 					"LocationSetToDatabaseDefault": false
@@ -131,7 +153,7 @@
 		"Properties": {
 			"Description": "",
 			"DisplayFolderInfo": "{\"name\":\"Others\",\"colorCode\":\"\"}",
-			"PrimaryKeys": "CustomerKey",
+			"PrimaryKeys": "ProductKey",
 			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,

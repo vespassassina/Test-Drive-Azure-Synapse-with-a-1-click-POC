@@ -1,7 +1,7 @@
 {
-	"name": "CustomerData",
+	"name": "SalesTerritory",
 	"properties": {
-		"Name": "CustomerData",
+		"Name": "SalesTerritory",
 		"EntityType": "TABLE",
 		"Namespace": {
 			"DatabaseName": "adworks"
@@ -14,7 +14,7 @@
 		"StorageDescriptor": {
 			"Columns": [
 				{
-					"Name": "CustomerKey",
+					"Name": "SalesTerritoryKey",
 					"OriginDataTypeName": {
 						"TypeName": "long",
 						"IsNullable": false,
@@ -25,7 +25,7 @@
 					}
 				},
 				{
-					"Name": "CustomerId",
+					"Name": "Region",
 					"OriginDataTypeName": {
 						"TypeName": "string",
 						"IsNullable": true,
@@ -37,7 +37,7 @@
 					}
 				},
 				{
-					"Name": "Customer",
+					"Name": "Country",
 					"OriginDataTypeName": {
 						"TypeName": "string",
 						"IsNullable": true,
@@ -49,43 +49,7 @@
 					}
 				},
 				{
-					"Name": "City",
-					"OriginDataTypeName": {
-						"TypeName": "string",
-						"IsNullable": true,
-						"IsComplexType": false,
-						"Length": 8000,
-						"Properties": {
-							"HIVE_TYPE_STRING": "string"
-						}
-					}
-				},
-				{
-					"Name": "StateProvince",
-					"OriginDataTypeName": {
-						"TypeName": "string",
-						"IsNullable": true,
-						"IsComplexType": false,
-						"Length": 8000,
-						"Properties": {
-							"HIVE_TYPE_STRING": "string"
-						}
-					}
-				},
-				{
-					"Name": "CountryRegion",
-					"OriginDataTypeName": {
-						"TypeName": "string",
-						"IsNullable": true,
-						"IsComplexType": false,
-						"Length": 8000,
-						"Properties": {
-							"HIVE_TYPE_STRING": "string"
-						}
-					}
-				},
-				{
-					"Name": "PostalCode",
+					"Name": "Group",
 					"OriginDataTypeName": {
 						"TypeName": "string",
 						"IsNullable": true,
@@ -103,7 +67,7 @@
 				"FormatType": "csv",
 				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
 				"Properties": {
-					"path": "abfss://public@dtrwol5bg6xm2xfkpoc.dfs.core.windows.net//adworks/CustomerData",
+					"path": "abfss://public@dtrwol5bg6xm2xfkpoc.dfs.core.windows.net//adworks/SalesTerritory",
 					"delimiter": ",",
 					"multiLine": "false",
 					"firstRowAsHeader": "false",
@@ -114,7 +78,7 @@
 			},
 			"Source": {
 				"Provider": "ADLS",
-				"Location": "abfss://public@dtrwol5bg6xm2xfkpoc.dfs.core.windows.net//adworks/CustomerData",
+				"Location": "abfss://public@dtrwol5bg6xm2xfkpoc.dfs.core.windows.net//adworks/SalesTerritory",
 				"Properties": {
 					"LinkedServiceName": "dtrwol5bg6xm2xfkpocws1-WorkspaceDefaultStorage",
 					"LocationSetToDatabaseDefault": false
@@ -131,7 +95,7 @@
 		"Properties": {
 			"Description": "",
 			"DisplayFolderInfo": "{\"name\":\"Others\",\"colorCode\":\"\"}",
-			"PrimaryKeys": "CustomerKey",
+			"PrimaryKeys": "SalesTerritoryKey",
 			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,

@@ -1,7 +1,7 @@
 {
-	"name": "CustomerData",
+	"name": "Reseller",
 	"properties": {
-		"Name": "CustomerData",
+		"Name": "Reseller",
 		"EntityType": "TABLE",
 		"Namespace": {
 			"DatabaseName": "adworks"
@@ -14,54 +14,7 @@
 		"StorageDescriptor": {
 			"Columns": [
 				{
-					"Name": "CustomerKey",
-					"OriginDataTypeName": {
-						"TypeName": "long",
-						"IsNullable": false,
-						"IsComplexType": false,
-						"Properties": {
-							"HIVE_TYPE_STRING": "long"
-						}
-					}
-				},
-				{
-					"Name": "CustomerId",
-					"OriginDataTypeName": {
-						"TypeName": "string",
-						"IsNullable": true,
-						"IsComplexType": false,
-						"Length": 8000,
-						"Properties": {
-							"HIVE_TYPE_STRING": "string"
-						}
-					}
-				},
-				{
-					"Name": "Customer",
-					"OriginDataTypeName": {
-						"TypeName": "string",
-						"IsNullable": true,
-						"IsComplexType": false,
-						"Length": 8000,
-						"Properties": {
-							"HIVE_TYPE_STRING": "string"
-						}
-					}
-				},
-				{
-					"Name": "City",
-					"OriginDataTypeName": {
-						"TypeName": "string",
-						"IsNullable": true,
-						"IsComplexType": false,
-						"Length": 8000,
-						"Properties": {
-							"HIVE_TYPE_STRING": "string"
-						}
-					}
-				},
-				{
-					"Name": "StateProvince",
+					"Name": "PostalCode",
 					"OriginDataTypeName": {
 						"TypeName": "string",
 						"IsNullable": true,
@@ -85,7 +38,7 @@
 					}
 				},
 				{
-					"Name": "PostalCode",
+					"Name": "StateProvince",
 					"OriginDataTypeName": {
 						"TypeName": "string",
 						"IsNullable": true,
@@ -93,6 +46,65 @@
 						"Length": 8000,
 						"Properties": {
 							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "City",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsNullable": true,
+						"IsComplexType": false,
+						"Length": 8000,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "Reseller",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsNullable": true,
+						"IsComplexType": false,
+						"Length": 8000,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BusinessType",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsNullable": true,
+						"IsComplexType": false,
+						"Length": 8000,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ResellerId",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsNullable": true,
+						"IsComplexType": false,
+						"Length": 8000,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ResellerKey",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsNullable": false,
+						"IsComplexType": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
 						}
 					}
 				}
@@ -103,7 +115,7 @@
 				"FormatType": "csv",
 				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
 				"Properties": {
-					"path": "abfss://public@dtrwol5bg6xm2xfkpoc.dfs.core.windows.net//adworks/CustomerData",
+					"path": "abfss://public@dtrwol5bg6xm2xfkpoc.dfs.core.windows.net//adworks/Reseller",
 					"delimiter": ",",
 					"multiLine": "false",
 					"firstRowAsHeader": "false",
@@ -114,7 +126,7 @@
 			},
 			"Source": {
 				"Provider": "ADLS",
-				"Location": "abfss://public@dtrwol5bg6xm2xfkpoc.dfs.core.windows.net//adworks/CustomerData",
+				"Location": "abfss://public@dtrwol5bg6xm2xfkpoc.dfs.core.windows.net//adworks/Reseller",
 				"Properties": {
 					"LinkedServiceName": "dtrwol5bg6xm2xfkpocws1-WorkspaceDefaultStorage",
 					"LocationSetToDatabaseDefault": false
@@ -131,7 +143,7 @@
 		"Properties": {
 			"Description": "",
 			"DisplayFolderInfo": "{\"name\":\"Others\",\"colorCode\":\"\"}",
-			"PrimaryKeys": "CustomerKey",
+			"PrimaryKeys": "ResellerKey",
 			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,

@@ -14,11 +14,11 @@
 		"StorageDescriptor": {
 			"Columns": [
 				{
-					"Name": "SO43659 - 1",
+					"Name": "SalesOrderLine",
 					"OriginDataTypeName": {
 						"TypeName": "string",
-						"IsComplexType": false,
 						"IsNullable": true,
+						"IsComplexType": false,
 						"Length": 8000,
 						"Properties": {
 							"HIVE_TYPE_STRING": "string"
@@ -26,11 +26,11 @@
 					}
 				},
 				{
-					"Name": "SO43659",
+					"Name": "SalesOrder",
 					"OriginDataTypeName": {
 						"TypeName": "string",
-						"IsComplexType": false,
 						"IsNullable": true,
+						"IsComplexType": false,
 						"Length": 8000,
 						"Properties": {
 							"HIVE_TYPE_STRING": "string"
@@ -38,22 +38,22 @@
 					}
 				},
 				{
-					"Name": "43659001",
+					"Name": "SalesOrderLineKey",
 					"OriginDataTypeName": {
 						"TypeName": "long",
+						"IsNullable": false,
 						"IsComplexType": false,
-						"IsNullable": true,
 						"Properties": {
 							"HIVE_TYPE_STRING": "long"
 						}
 					}
 				},
 				{
-					"Name": "Reseller",
+					"Name": "Channel",
 					"OriginDataTypeName": {
 						"TypeName": "string",
-						"IsComplexType": false,
 						"IsNullable": true,
+						"IsComplexType": false,
 						"Length": 8000,
 						"Properties": {
 							"HIVE_TYPE_STRING": "string"
@@ -95,7 +95,7 @@
 		"Properties": {
 			"Description": "",
 			"DisplayFolderInfo": "{\"name\":\"Others\",\"colorCode\":\"\"}",
-			"PrimaryKeys": "",
+			"PrimaryKeys": "SalesOrderLineKey",
 			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
