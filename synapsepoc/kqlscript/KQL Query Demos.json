@@ -1,0 +1,16 @@
+{
+	"name": "KQL Query Demos",
+	"properties": {
+		"content": {
+			"query": "// https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/tutorial?context=%2Fazure%2Fsynapse-analytics%2Fcontext%2Fcontext&pivots=azuredataexplorer\n\n//count\nStormEvents | count\n\n//filter\nStormEvents\n| where StartTime > datetime(2007-02-01) and StartTime < datetime(2007-03-01)\n| where EventType == 'Flood' and State == 'CALIFORNIA'\n| project StartTime, EndTime , State , EventType , EpisodeNarrative\n\n//take\nStormEvents\n| take 5\n| project  StartTime, EndTime, EventType, State, EventNarrative\n\n//top 5\nStormEvents\n| top 5 by StartTime desc\n| project  StartTime, EndTime, EventType, State, EventNarrative  \n\n//top 5\nStormEvents\n| sort by StartTime desc\n| take 5\n| project  StartTime, EndTime, EventType, EventNarrative\n\n//compute derived columns\nStormEvents\n| limit 5\n| extend Duration = EndTime - StartTime \n| project StartTime, EndTime, Duration, EventType, State\n\n//calculate\nprint x=1\n| extend x = x + 1, y = x\n| extend x = x + 1\n\n//aggregate\nStormEvents\n| summarize event_count = count() by State\n\n//summarize by scalar\nStormEvents\n| where StartTime > datetime(2007-02-14) and StartTime < datetime(2007-02-21)\n| summarize event_count = count() by bin(StartTime, 1d)\n\n//render\nStormEvents \n| summarize event_count=count(), mid = avg(BeginLat) by State \n| sort by mid\n| where event_count > 1800\n| project State, event_count\n| render columnchart\n\n//timechart\nStormEvents\n| summarize event_count=count() by bin(StartTime, 1d)\n| render timechart\n\n//multiple series\nStormEvents \n| where StartTime > datetime(2007-06-04) and StartTime < datetime(2007-06-10) \n| where Source in (\"Source\",\"Public\",\"Emergency Manager\",\"Trained Spotter\",\"Law Enforcement\")\n| summarize count() by bin(StartTime, 10h), Source\n| render timechart\n\n//daily avg\nStormEvents\n| extend hour = floor(StartTime % 1d , 1h)\n| summarize event_count=count() by hour\n| sort by hour asc\n| render timechart\n\n//distribution\nStormEvents\n| extend  duration = EndTime - StartTime\n| where duration > 0s\n| where duration < 3h\n| summarize event_count = count()\n    by bin(duration, 5m)\n| sort by duration asc\n| render timechart\n\n//percentiles\nStormEvents\n| extend  duration = EndTime - StartTime\n| where duration > 0s\n| where duration < 3h\n| summarize event_count = count()\n    by bin(duration, 5m), State\n| sort by duration asc\n| summarize percentiles(duration, 5, 20, 50, 80, 95) by State\n\n\n\n",
+			"metadata": {
+				"language": "kql"
+			},
+			"currentConnection": {
+				"poolName": "dtrdemopool",
+				"databaseName": "DTRDB"
+			}
+		},
+		"type": "KqlQuery"
+	}
+}
