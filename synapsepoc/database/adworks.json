@@ -1,0 +1,22 @@
+{
+	"name": "adworks",
+	"properties": {
+		"Name": "adworks",
+		"EntityType": "DATABASE",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"Properties": {
+			"IsSyMSCDMDatabase": true
+		},
+		"Source": {
+			"Provider": "ADLS",
+			"Location": "abfss://dlsdtrpocfs1@dtrwol5bg6xm2xfkpoc.dfs.core.windows.net/adworks",
+			"Properties": {
+				"FormatType": "csv",
+				"LinkedServiceName": "dtrwol5bg6xm2xfkpocws1-WorkspaceDefaultStorage"
+			}
+		}
+	},
+	"type": "DATABASE"
+}
