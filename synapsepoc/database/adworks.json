@@ -11,7 +11,7 @@
 		},
 		"Source": {
 			"Provider": "ADLS",
-			"Location": "abfss://dlsdtrpocfs1@dtrwol5bg6xm2xfkpoc.dfs.core.windows.net/adworks",
+			"Location": "abfss://public@dtrwol5bg6xm2xfkpoc.dfs.core.windows.net/adworks",
 			"Properties": {
 				"FormatType": "csv",
 				"LinkedServiceName": "dtrwol5bg6xm2xfkpocws1-WorkspaceDefaultStorage"
