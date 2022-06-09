@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"workspaceName": {
+			"value": "dtrwol5bg6xm2xfkpocws1"
+		},
+		"TripFaresSynapseAnalyticsLinkedService_connectionString": {
+			"value": ""
+		},
+		"AzureKeyVault2_properties_typeProperties_baseUrl": {
+			"value": "https://kvdtrwol5bg6xm2xfkpoc.vault.azure.net/"
+		},
+		"AzureMLService1_properties_typeProperties_subscriptionId": {
+			"value": "d2910e0f-a763-4dd8-9c8d-0105ccd0570e"
+		},
+		"AzureMLService1_properties_typeProperties_resourceGroupName": {
+			"value": "Synapse2ClickPoc"
+		},
+		"CognitiveService1_properties_typeProperties_subscriptionId": {
+			"value": "d2910e0f-a763-4dd8-9c8d-0105ccd0570e"
+		},
+		"HttpServerTripDataLinkedService_properties_typeProperties_url": {
+			"value": "https://raw.githubusercontent.com/Azure/Test-Drive-Azure-Synapse-with-a-1-click-POC/main/tripDataAndFaresCSV/trip-data.csv"
+		},
+		"HttpServerTripFareDataLinkedService_properties_typeProperties_url": {
+			"value": "https://raw.githubusercontent.com/Azure/Test-Drive-Azure-Synapse-with-a-1-click-POC/main/tripDataAndFaresCSV/fares-data.csv"
+		},
+		"TripFaresDataLakeStorageLinkedService_properties_typeProperties_url": {
+			"value": "@{concat('https://',linkedService().datalakeAccountName,'.dfs.core.windows.net')}"
+		},
+		"keyVaultLinkedservice_properties_typeProperties_baseUrl": {
+			"value": "@{concat('https://',linkedService().keyVaultName,'.vault.azure.net/')}"
+		}
+	}
+}
