@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "649d11e0-b634-4098-b87f-477d00dfa7c3"
+				"spark.autotune.trackingId": "afc35ded-d6d3-422e-ac4a-6953243cef7c"
 			}
 		},
 		"metadata": {
@@ -394,7 +394,7 @@
 					"final_df.write.saveAsTable(\"nyc_taxi_holiday_weather\");\n",
 					"spark.sql(\"SELECT COUNT(*) FROM nyc_taxi_holiday_weather\").show();"
 				],
-				"execution_count": 23
+				"execution_count": 24
 			}
 		]
 	}
