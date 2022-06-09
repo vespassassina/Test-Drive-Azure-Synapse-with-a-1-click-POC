@@ -17,7 +17,7 @@
 				"     databaseType: 'spark',",
 				"     format: 'table',",
 				"     database: 'default',",
-				"     tableName: '') ~> source1"
+				"     tableName: 'faresdata') ~> source1"
 			]
 		}
 	}
