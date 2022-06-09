@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "56462f5d-b8fb-40cd-8080-b6b00a8a0066"
+				"spark.autotune.trackingId": "e6e44fd4-eea2-4341-a254-a6e5ab66486b"
 			}
 		},
 		"metadata": {
@@ -136,7 +136,7 @@
 					"\n",
 					"nyc_tlc_df_clean = nyc_tlc_df_expand.select([column for column in nyc_tlc_df_expand.columns if column not in columns_to_remove])"
 				],
-				"execution_count": 4
+				"execution_count": 3
 			},
 			{
 				"cell_type": "code",
@@ -144,7 +144,7 @@
 					"# Display 5 rows\n",
 					"nyc_tlc_df_clean.show(5)"
 				],
-				"execution_count": 5
+				"execution_count": null
 			},
 			{
 				"cell_type": "markdown",
@@ -167,7 +167,7 @@
 					"# Display data\n",
 					"hol_df.show(5, truncate = False)"
 				],
-				"execution_count": 6
+				"execution_count": null
 			},
 			{
 				"cell_type": "markdown",
@@ -183,7 +183,7 @@
 					"\n",
 					"hol_df_clean.show(5)"
 				],
-				"execution_count": 7
+				"execution_count": null
 			},
 			{
 				"cell_type": "markdown",
@@ -199,7 +199,7 @@
 					"\n",
 					"nyc_taxi_holiday_df.show(5)"
 				],
-				"execution_count": 8
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -209,7 +209,7 @@
 					"nyc_taxi_holiday_df.createOrReplaceTempView(\"nyc_taxi_holiday_df\")\n",
 					"spark.sql(\"SELECT * from nyc_taxi_holiday_df WHERE holidayName is NOT NULL \").show(5, truncate = False)"
 				],
-				"execution_count": 9
+				"execution_count": null
 			},
 			{
 				"cell_type": "markdown",
@@ -227,14 +227,14 @@
 					"isd = NoaaIsdWeather(start_date, end_date)\n",
 					"isd_df = isd.to_spark_dataframe()"
 				],
-				"execution_count": 10
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
 				"source": [
 					"isd_df.show(5, truncate = False)"
 				],
-				"execution_count": 11
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -249,7 +249,7 @@
 					"                        .withColumnRenamed('datetime','datetime_full')\n",
 					"                         "
 				],
-				"execution_count": 12
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -262,7 +262,7 @@
 					"\n",
 					"weather_df_clean.show(5, truncate = False)"
 				],
-				"execution_count": 13
+				"execution_count": null
 			},
 			{
 				"cell_type": "markdown",
@@ -279,14 +279,14 @@
 					"aggregations = {\"snowDepth\": \"mean\", \"precipTime\": \"max\", \"temperature\": \"mean\", \"precipDepth\": \"max\"}\n",
 					"weather_df_grouped = weather_df_clean.groupby(\"datetime\").agg(aggregations)"
 				],
-				"execution_count": 14
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
 				"source": [
 					"weather_df_grouped.show(5)"
 				],
-				"execution_count": 15
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -298,7 +298,7 @@
 					"                                       .withColumnRenamed('max(precipTime)','max_precipTime')\\\n",
 					"                                       .withColumnRenamed('max(precipDepth)','max_precipDepth')"
 				],
-				"execution_count": 16
+				"execution_count": null
 			},
 			{
 				"cell_type": "markdown",
@@ -313,14 +313,14 @@
 					"nyc_taxi_holiday_weather_df = nyc_taxi_holiday_df.join(weather_df_grouped, on = 'datetime' , how = 'left')\n",
 					"nyc_taxi_holiday_weather_df.cache()"
 				],
-				"execution_count": 17
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
 				"source": [
 					"nyc_taxi_holiday_weather_df.show(5)"
 				],
-				"execution_count": 18
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -332,7 +332,7 @@
 					"\n",
 					"display(nyc_taxi_holiday_weather_df.describe())"
 				],
-				"execution_count": 19
+				"execution_count": null
 			},
 			{
 				"cell_type": "markdown",
@@ -349,7 +349,7 @@
 					"final_df = nyc_taxi_holiday_weather_df.filter(nyc_taxi_holiday_weather_df.tipAmount > 0)\\\n",
 					"                                      .filter(nyc_taxi_holiday_weather_df.totalAmount > 0)"
 				],
-				"execution_count": 20
+				"execution_count": null
 			},
 			{
 				"cell_type": "markdown",
@@ -366,7 +366,7 @@
 				"source": [
 					"spark.sql(\"DROP TABLE IF EXISTS NYCTaxi.nyc_taxi_holiday_weather\"); "
 				],
-				"execution_count": 21
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -375,7 +375,7 @@
 					"spark.sql(\"CREATE DATABASE NYCTaxi\"); \n",
 					"spark.sql(\"USE NYCTaxi\");"
 				],
-				"execution_count": 22
+				"execution_count": null
 			},
 			{
 				"cell_type": "markdown",
@@ -394,7 +394,7 @@
 					"final_df.write.saveAsTable(\"nyc_taxi_holiday_weather\");\n",
 					"spark.sql(\"SELECT COUNT(*) FROM nyc_taxi_holiday_weather\").show();"
 				],
-				"execution_count": 23
+				"execution_count": null
 			}
 		]
 	}
