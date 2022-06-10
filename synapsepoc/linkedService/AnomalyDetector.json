@@ -1,0 +1,30 @@
+{
+	"name": "AnomalyDetector",
+	"properties": {
+		"annotations": [],
+		"type": "CognitiveService",
+		"typeProperties": {
+			"subscriptionId": "d2910e0f-a763-4dd8-9c8d-0105ccd0570e",
+			"resourceGroup": "synapse2clickpoc",
+			"csName": "dtranomalydetector",
+			"csKind": "AnomalyDetector",
+			"csLocation": "westeurope",
+			"endPoint": "https://dtranomalydetector.cognitiveservices.azure.com/",
+			"csKey": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "keyVaultLinkedservice",
+					"type": "LinkedServiceReference",
+					"parameters": {
+						"keyVaultName": "kvdtrwol5bg6xm2xfkpoc"
+					}
+				},
+				"secretName": "AnomalyDetector"
+			}
+		},
+		"connectVia": {
+			"referenceName": "AutoResolveIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
