@@ -23,10 +23,6 @@
 			"type": "string",
 			"defaultValue": "Synapse2ClickPoc"
 		},
-		"CognitiveService1_properties_typeProperties_subscriptionId": {
-			"type": "string",
-			"defaultValue": "d2910e0f-a763-4dd8-9c8d-0105ccd0570e"
-		},
 		"HttpServerTripDataLinkedService_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://raw.githubusercontent.com/Azure/Test-Drive-Azure-Synapse-with-a-1-click-POC/main/tripDataAndFaresCSV/trip-data.csv"
@@ -42,6 +38,10 @@
 		"keyVaultLinkedservice_properties_typeProperties_baseUrl": {
 			"type": "string",
 			"defaultValue": "@{concat('https://',linkedService().keyVaultName,'.vault.azure.net/')}"
+		},
+		"CognitiveServicesLink_properties_typeProperties_subscriptionId": {
+			"type": "string",
+			"defaultValue": "d2910e0f-a763-4dd8-9c8d-0105ccd0570e"
 		}
 	},
 	"variables": {
@@ -424,6 +424,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('workspaceId'), '/dataflows/ChannelType_DataFlow1')]",
+				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]",
 				"[concat(variables('workspaceId'), '/dataflows/Territory_DataFlow1')]"
 			]
 		},
@@ -2214,39 +2215,6 @@
 			},
 			"dependsOn": [
 				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('workspaceName'), '/CognitiveService1')]",
-			"type": "Microsoft.Synapse/workspaces/linkedServices",
-			"apiVersion": "2019-06-01-preview",
-			"properties": {
-				"annotations": [],
-				"type": "CognitiveService",
-				"typeProperties": {
-					"subscriptionId": "[parameters('CognitiveService1_properties_typeProperties_subscriptionId')]",
-					"resourceGroup": "synapse2clickpoc",
-					"csName": "DTRCognitiveServices",
-					"csKind": "CognitiveServices",
-					"csLocation": "westeurope",
-					"endPoint": "https://dtrcognitiveservices.cognitiveservices.azure.com/",
-					"csKey": {
-						"type": "AzureKeyVaultSecret",
-						"store": {
-							"referenceName": "AzureKeyVault2",
-							"type": "LinkedServiceReference"
-						},
-						"secretName": "CognitiveServices"
-					}
-				},
-				"connectVia": {
-					"referenceName": "AutoResolveIntegrationRuntime",
-					"type": "IntegrationRuntimeReference"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]",
-				"[concat(variables('workspaceId'), '/linkedServices/AzureKeyVault2')]"
 			]
 		},
 		{
@@ -7082,6 +7050,42 @@
 			"apiVersion": "2019-06-01-preview",
 			"properties": {},
 			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/CognitiveServicesLink')]",
+			"type": "Microsoft.Synapse/workspaces/linkedServices",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"annotations": [],
+				"type": "CognitiveService",
+				"typeProperties": {
+					"subscriptionId": "[parameters('CognitiveServicesLink_properties_typeProperties_subscriptionId')]",
+					"resourceGroup": "synapse2clickpoc",
+					"csName": "DTRCognitiveServices",
+					"csKind": "CognitiveServices",
+					"csLocation": "westeurope",
+					"endPoint": "https://dtrcognitiveservices.cognitiveservices.azure.com/",
+					"csKey": {
+						"type": "AzureKeyVaultSecret",
+						"store": {
+							"referenceName": "keyVaultLinkedservice",
+							"type": "LinkedServiceReference",
+							"parameters": {
+								"keyVaultName": "kvdtrwol5bg6xm2xfkpoc"
+							}
+						},
+						"secretName": "CognitiveServices"
+					}
+				},
+				"connectVia": {
+					"referenceName": "AutoResolveIntegrationRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]",
+				"[concat(variables('workspaceId'), '/linkedServices/keyVaultLinkedservice')]"
+			]
 		}
 	]
 }
