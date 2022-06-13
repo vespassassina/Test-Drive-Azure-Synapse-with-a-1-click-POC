@@ -14,6 +14,9 @@
 		"dtrprotectedstorage_accountKey": {
 			"value": ""
 		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
 		"AzureMLService1_properties_typeProperties_subscriptionId": {
 			"value": "d2910e0f-a763-4dd8-9c8d-0105ccd0570e"
 		},
@@ -40,6 +43,9 @@
 		},
 		"dtrprotectedstorage_properties_typeProperties_url": {
 			"value": "https://dtrprotectedstorage.dfs.core.windows.net"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://dtrwol5bg6xm2xfkpoc.dfs.core.windows.net"
 		}
 	}
 }
