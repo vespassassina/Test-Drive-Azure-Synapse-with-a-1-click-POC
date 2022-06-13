@@ -1,0 +1,7 @@
+{
+	"name": "DTRProtectedStorageEndpoint",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/d2910e0f-a763-4dd8-9c8d-0105ccd0570e/resourceGroups/Synapse2ClickPoc/providers/Microsoft.Storage/storageAccounts/dtrprotectedstorage",
+		"groupId": "dfs"
+	}
+}
