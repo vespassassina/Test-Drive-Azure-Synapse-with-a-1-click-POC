@@ -8,8 +8,8 @@
 		"TripFaresSynapseAnalyticsLinkedService_connectionString": {
 			"value": ""
 		},
-		"AzureKeyVault2_properties_typeProperties_baseUrl": {
-			"value": "https://kvdtrwol5bg6xm2xfkpoc.vault.azure.net/"
+		"AzureSqlDatabaseAdvWorks_connectionString": {
+			"value": ""
 		},
 		"AzureMLService1_properties_typeProperties_subscriptionId": {
 			"value": "d2910e0f-a763-4dd8-9c8d-0105ccd0570e"
@@ -29,7 +29,10 @@
 		"keyVaultLinkedservice_properties_typeProperties_baseUrl": {
 			"value": "@{concat('https://',linkedService().keyVaultName,'.vault.azure.net/')}"
 		},
-		"CognitiveServicesLink_properties_typeProperties_subscriptionId": {
+		"TextAnalytics_properties_typeProperties_subscriptionId": {
+			"value": "d2910e0f-a763-4dd8-9c8d-0105ccd0570e"
+		},
+		"AnomalyDetector_properties_typeProperties_subscriptionId": {
 			"value": "d2910e0f-a763-4dd8-9c8d-0105ccd0570e"
 		}
 	}

@@ -11,9 +11,9 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'TripFaresSynapseAnalyticsLinkedService'"
 		},
-		"AzureKeyVault2_properties_typeProperties_baseUrl": {
-			"type": "string",
-			"defaultValue": "https://kvdtrwol5bg6xm2xfkpoc.vault.azure.net/"
+		"AzureSqlDatabaseAdvWorks_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabaseAdvWorks'"
 		},
 		"AzureMLService1_properties_typeProperties_subscriptionId": {
 			"type": "string",
@@ -39,7 +39,11 @@
 			"type": "string",
 			"defaultValue": "@{concat('https://',linkedService().keyVaultName,'.vault.azure.net/')}"
 		},
-		"CognitiveServicesLink_properties_typeProperties_subscriptionId": {
+		"TextAnalytics_properties_typeProperties_subscriptionId": {
+			"type": "string",
+			"defaultValue": "d2910e0f-a763-4dd8-9c8d-0105ccd0570e"
+		},
+		"AnomalyDetector_properties_typeProperties_subscriptionId": {
 			"type": "string",
 			"defaultValue": "d2910e0f-a763-4dd8-9c8d-0105ccd0570e"
 		}
@@ -2181,19 +2185,6 @@
 			"dependsOn": [
 				"[concat(variables('workspaceId'), '/linkedServices/HttpServerTripDataLinkedService')]"
 			]
-		},
-		{
-			"name": "[concat(parameters('workspaceName'), '/AzureKeyVault2')]",
-			"type": "Microsoft.Synapse/workspaces/linkedServices",
-			"apiVersion": "2019-06-01-preview",
-			"properties": {
-				"annotations": [],
-				"type": "AzureKeyVault",
-				"typeProperties": {
-					"baseUrl": "[parameters('AzureKeyVault2_properties_typeProperties_baseUrl')]"
-				}
-			},
-			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('workspaceName'), '/AzureMLService1')]",
@@ -7052,19 +7043,38 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('workspaceName'), '/CognitiveServicesLink')]",
+			"name": "[concat(parameters('workspaceName'), '/AzureSqlDatabaseAdvWorks')]",
+			"type": "Microsoft.Synapse/workspaces/linkedServices",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureSqlDatabaseAdvWorks_connectionString')]"
+				},
+				"connectVia": {
+					"referenceName": "AutoResolveIntegrationRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/TextAnalytics')]",
 			"type": "Microsoft.Synapse/workspaces/linkedServices",
 			"apiVersion": "2019-06-01-preview",
 			"properties": {
 				"annotations": [],
 				"type": "CognitiveService",
 				"typeProperties": {
-					"subscriptionId": "[parameters('CognitiveServicesLink_properties_typeProperties_subscriptionId')]",
+					"subscriptionId": "[parameters('TextAnalytics_properties_typeProperties_subscriptionId')]",
 					"resourceGroup": "synapse2clickpoc",
-					"csName": "DTRCognitiveServices",
-					"csKind": "CognitiveServices",
+					"csName": "dtrtextanalytics",
+					"csKind": "TextAnalytics",
 					"csLocation": "westeurope",
-					"endPoint": "https://dtrcognitiveservices.cognitiveservices.azure.com/",
+					"endPoint": "https://dtrtextanalytics.cognitiveservices.azure.com/",
 					"csKey": {
 						"type": "AzureKeyVaultSecret",
 						"store": {
@@ -7074,7 +7084,7 @@
 								"keyVaultName": "kvdtrwol5bg6xm2xfkpoc"
 							}
 						},
-						"secretName": "CognitiveServices"
+						"secretName": "TextAnalytics"
 					}
 				},
 				"connectVia": {
@@ -7086,6 +7096,136 @@
 				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]",
 				"[concat(variables('workspaceId'), '/linkedServices/keyVaultLinkedservice')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/AnomalyDetector')]",
+			"type": "Microsoft.Synapse/workspaces/linkedServices",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"annotations": [],
+				"type": "CognitiveService",
+				"typeProperties": {
+					"subscriptionId": "[parameters('AnomalyDetector_properties_typeProperties_subscriptionId')]",
+					"resourceGroup": "synapse2clickpoc",
+					"csName": "dtranomalydetector",
+					"csKind": "AnomalyDetector",
+					"csLocation": "westeurope",
+					"endPoint": "https://dtranomalydetector.cognitiveservices.azure.com/",
+					"csKey": {
+						"type": "AzureKeyVaultSecret",
+						"store": {
+							"referenceName": "keyVaultLinkedservice",
+							"type": "LinkedServiceReference",
+							"parameters": {
+								"keyVaultName": "kvdtrwol5bg6xm2xfkpoc"
+							}
+						},
+						"secretName": "AnomalyDetector"
+					}
+				},
+				"connectVia": {
+					"referenceName": "AutoResolveIntegrationRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]",
+				"[concat(variables('workspaceId'), '/linkedServices/keyVaultLinkedservice')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/SentimentAnalysis-With-TextAnalytics')]",
+			"type": "Microsoft.Synapse/workspaces/notebooks",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"nbformat": 4,
+				"nbformat_minor": 2,
+				"bigDataPool": {
+					"referenceName": "ws1sparkpool1",
+					"type": "BigDataPoolReference"
+				},
+				"sessionProperties": {
+					"driverMemory": "28g",
+					"driverCores": 4,
+					"executorMemory": "28g",
+					"executorCores": 4,
+					"numExecutors": 2,
+					"conf": {
+						"spark.dynamicAllocation.enabled": "false",
+						"spark.dynamicAllocation.minExecutors": "2",
+						"spark.dynamicAllocation.maxExecutors": "2",
+						"spark.autotune.trackingId": "9044ce6b-551d-4a1e-9878-490a6fca00c6"
+					}
+				},
+				"metadata": {
+					"saveOutput": true,
+					"enableDebugMode": false,
+					"kernelspec": {
+						"name": "synapse_pyspark",
+						"display_name": "python"
+					},
+					"language_info": {
+						"name": "python"
+					},
+					"a365ComputeOptions": {
+						"id": "/subscriptions/d2910e0f-a763-4dd8-9c8d-0105ccd0570e/resourceGroups/Synapse2ClickPoc/providers/Microsoft.Synapse/workspaces/dtrwol5bg6xm2xfkpocws1/bigDataPools/ws1sparkpool1",
+						"name": "ws1sparkpool1",
+						"type": "Spark",
+						"endpoint": "https://dtrwol5bg6xm2xfkpocws1.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/ws1sparkpool1",
+						"auth": {
+							"type": "AAD",
+							"authResource": "https://dev.azuresynapse.net"
+						},
+						"sparkVersion": "2.4",
+						"nodeCount": 5,
+						"cores": 4,
+						"memory": 28,
+						"automaticScaleJobs": false
+					},
+					"sessionKeepAliveTimeout": 30
+				},
+				"cells": [
+					{
+						"cell_type": "code",
+						"metadata": {},
+						"source": [
+							"from mmlspark.cognitive import *\n",
+							"from notebookutils import mssparkutils\n",
+							"from pyspark.sql.functions import explode\n",
+							"\n",
+							"# Load the data into a Spark DataFrame\n",
+							"df = spark.sql(\"SELECT * FROM default.fabrikamcomments\")\n",
+							"\n",
+							"sentiment = (TextSentiment()\n",
+							"    .setLinkedService(\"TextAnalytics\")\n",
+							"    .setOutputCol(\"output\")\n",
+							"    .setErrorCol(\"error\")\n",
+							"    .setLanguage(\"en\")\n",
+							"    .setTextCol(\"comment\"))\n",
+							"\n",
+							"results = sentiment.transform(df)\n",
+							"\n",
+							"# Show the results\n",
+							"display(results\\\n",
+							"    .select(\"comment\", explode(\"output\").alias(\"exploded\"), \"error\")\\\n",
+							"    .select(\"comment\", \"exploded.*\", \"error\")\\\n",
+							"    .limit(10))"
+						],
+						"outputs": [],
+						"execution_count": null
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/Spark32')]",
+			"type": "Microsoft.Synapse/workspaces/bigDataPools",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"annotations": []
+			},
+			"dependsOn": []
 		}
 	]
 }
