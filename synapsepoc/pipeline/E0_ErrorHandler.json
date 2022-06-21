@@ -1,0 +1,9 @@
+{
+	"name": "E0_ErrorHandler",
+	"properties": {
+		"folder": {
+			"name": "AdventureWorksPipelines"
+		},
+		"annotations": []
+	}
+}
