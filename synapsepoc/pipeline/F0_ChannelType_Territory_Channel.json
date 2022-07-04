@@ -34,38 +34,6 @@
 					},
 					"waitOnCompletion": true
 				}
-			},
-			{
-				"name": "Error Handler",
-				"type": "ExecutePipeline",
-				"dependsOn": [
-					{
-						"activity": "L1_Channel",
-						"dependencyConditions": [
-							"Failed"
-						]
-					}
-				],
-				"userProperties": [],
-				"typeProperties": {
-					"waitOnCompletion": true
-				}
-			},
-			{
-				"name": "Execute Pipeline1",
-				"type": "ExecutePipeline",
-				"dependsOn": [
-					{
-						"activity": "L0_ChannelType_Territory",
-						"dependencyConditions": [
-							"Failed"
-						]
-					}
-				],
-				"userProperties": [],
-				"typeProperties": {
-					"waitOnCompletion": true
-				}
 			}
 		],
 		"folder": {
