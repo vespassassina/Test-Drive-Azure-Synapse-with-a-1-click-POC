@@ -48,10 +48,6 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
-					"pipeline": {
-						"referenceName": "E0_ErrorHandler",
-						"type": "PipelineReference"
-					},
 					"waitOnCompletion": true
 				}
 			},
@@ -68,10 +64,6 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
-					"pipeline": {
-						"referenceName": "E0_ErrorHandler",
-						"type": "PipelineReference"
-					},
 					"waitOnCompletion": true
 				}
 			}
