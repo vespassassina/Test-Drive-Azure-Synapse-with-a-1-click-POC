@@ -84,7 +84,7 @@
 							"table": "Address"
 						},
 						"destination": {
-							"fileName": "Address/SalesLTAddress.csv"
+							"fileName": "Address/SalesLTAddress.parquet"
 						}
 					},
 					{
@@ -92,7 +92,7 @@
 							"table": "Customer"
 						},
 						"destination": {
-							"fileName": "Customer/SalesLTCustomer.csv"
+							"fileName": "Customer/SalesLTCustomer.parquet"
 						}
 					},
 					{
@@ -100,7 +100,7 @@
 							"table": "CustomerAddress"
 						},
 						"destination": {
-							"fileName": "CustomerAddress/SalesLTCustomerAddress.csv"
+							"fileName": "CustomerAddress/SalesLTCustomerAddress.parquet"
 						}
 					},
 					{
@@ -108,7 +108,7 @@
 							"table": "Product"
 						},
 						"destination": {
-							"fileName": "Product/SalesLTProduct.csv"
+							"fileName": "Product/SalesLTProduct.parquet"
 						}
 					},
 					{
@@ -116,7 +116,7 @@
 							"table": "ProductCategory"
 						},
 						"destination": {
-							"fileName": "ProductCategory/SalesLTProductCategory.csv"
+							"fileName": "ProductCategory/SalesLTProductCategory.parquet"
 						}
 					},
 					{
@@ -124,7 +124,7 @@
 							"table": "ProductDescription"
 						},
 						"destination": {
-							"fileName": "ProductDescription/SalesLTProductDescription.csv"
+							"fileName": "ProductDescription/SalesLTProductDescription.parquet"
 						}
 					},
 					{
@@ -132,7 +132,7 @@
 							"table": "ProductModel"
 						},
 						"destination": {
-							"fileName": "ProductModel/SalesLTProductModel.csv"
+							"fileName": "ProductModel/SalesLTProductModel.parquet"
 						}
 					},
 					{
@@ -140,7 +140,7 @@
 							"table": "ProductModelProductDescription"
 						},
 						"destination": {
-							"fileName": "ProductModelProductDescription/SalesLTProductModelProductDescription.csv"
+							"fileName": "ProductModelProductDescription/SalesLTProductModelProductDescription.parquet"
 						}
 					},
 					{
@@ -148,7 +148,7 @@
 							"table": "SalesOrderDetail"
 						},
 						"destination": {
-							"fileName": "SalesOrderDetail/SalesLTSalesOrderDetail.csv"
+							"fileName": "SalesOrderDetail/SalesLTSalesOrderDetail.parquet"
 						}
 					},
 					{
@@ -156,7 +156,7 @@
 							"table": "SalesOrderHeader"
 						},
 						"destination": {
-							"fileName": "SalesOrderHeader/SalesLTSalesOrderHeader.csv"
+							"fileName": "SalesOrderHeader/SalesLTSalesOrderHeader.parquet"
 						}
 					}
 				]
