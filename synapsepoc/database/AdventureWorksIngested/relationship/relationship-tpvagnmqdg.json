@@ -1,0 +1,23 @@
+{
+	"name": "relationship-tpvagnmqdg",
+	"properties": {
+		"Name": "relationship-tpvagnmqdg",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "AdventureWorksIngested"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Addresses",
+		"ToTableName": "CustomerAddress",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AddressID",
+				"ToColumnName": "AddressID"
+			}
+		],
+		"RelationshipType": 0
+	},
+	"type": "RELATIONSHIP"
+}

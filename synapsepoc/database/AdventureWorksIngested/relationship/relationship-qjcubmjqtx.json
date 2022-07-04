@@ -1,0 +1,23 @@
+{
+	"name": "relationship-qjcubmjqtx",
+	"properties": {
+		"Name": "relationship-qjcubmjqtx",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "AdventureWorksIngested"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Customers",
+		"ToTableName": "CustomerAddress",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerID",
+				"ToColumnName": "CustomerID"
+			}
+		],
+		"RelationshipType": 0
+	},
+	"type": "RELATIONSHIP"
+}
