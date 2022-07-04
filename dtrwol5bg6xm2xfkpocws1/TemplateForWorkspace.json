@@ -84,7 +84,7 @@
 				"description": "Dumps the content of the adventureworks db, from sql to datalake in parquet format",
 				"activities": [
 					{
-						"name": "ForEach_cz8",
+						"name": "ForEach_Table",
 						"type": "ForEach",
 						"dependsOn": [],
 						"userProperties": [],
@@ -95,7 +95,7 @@
 							},
 							"activities": [
 								{
-									"name": "Copy_cz8",
+									"name": "Copy_TableToDataLake",
 									"type": "Copy",
 									"dependsOn": [],
 									"policy": {
@@ -4018,7 +4018,7 @@
 						"spark.dynamicAllocation.enabled": "false",
 						"spark.dynamicAllocation.minExecutors": "2",
 						"spark.dynamicAllocation.maxExecutors": "2",
-						"spark.autotune.trackingId": "8753d5d4-c1df-4c63-b3fe-20c3fd3af157"
+						"spark.autotune.trackingId": "d9b0a422-b213-4d8e-989e-4a104bf82f50"
 					}
 				},
 				"metadata": {
