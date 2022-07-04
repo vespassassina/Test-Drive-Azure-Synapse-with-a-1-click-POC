@@ -1,0 +1,22 @@
+{
+	"name": "AdventureWorksIngested",
+	"properties": {
+		"Name": "AdventureWorksIngested",
+		"EntityType": "DATABASE",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"Properties": {
+			"IsSyMSCDMDatabase": true
+		},
+		"Source": {
+			"Provider": "ADLS",
+			"Location": "abfss://adventureworks@dtrwol5bg6xm2xfkpoc.dfs.core.windows.net/",
+			"Properties": {
+				"FormatType": "parquet",
+				"LinkedServiceName": "AzureDataLakeStorage"
+			}
+		}
+	},
+	"type": "DATABASE"
+}
