@@ -84,7 +84,7 @@
 							"table": "Address"
 						},
 						"destination": {
-							"fileName": "SalesLTAddress.txt"
+							"fileName": "SalesLTAddress.parquet"
 						}
 					},
 					{
@@ -92,7 +92,7 @@
 							"table": "Customer"
 						},
 						"destination": {
-							"fileName": "SalesLTCustomer.txt"
+							"fileName": "SalesLTCustomer.parquet"
 						}
 					},
 					{
@@ -100,7 +100,7 @@
 							"table": "CustomerAddress"
 						},
 						"destination": {
-							"fileName": "SalesLTCustomerAddress.txt"
+							"fileName": "SalesLTCustomerAddress.parquet"
 						}
 					},
 					{
@@ -108,7 +108,7 @@
 							"table": "Product"
 						},
 						"destination": {
-							"fileName": "SalesLTProduct.txt"
+							"fileName": "SalesLTProduct.parquet"
 						}
 					},
 					{
@@ -116,7 +116,7 @@
 							"table": "ProductCategory"
 						},
 						"destination": {
-							"fileName": "SalesLTProductCategory.txt"
+							"fileName": "SalesLTProductCategory.parquet"
 						}
 					},
 					{
@@ -124,7 +124,7 @@
 							"table": "ProductDescription"
 						},
 						"destination": {
-							"fileName": "SalesLTProductDescription.txt"
+							"fileName": "SalesLTProductDescription.parquet"
 						}
 					},
 					{
@@ -132,7 +132,7 @@
 							"table": "ProductModel"
 						},
 						"destination": {
-							"fileName": "SalesLTProductModel.txt"
+							"fileName": "SalesLTProductModel.parquet"
 						}
 					},
 					{
@@ -140,7 +140,7 @@
 							"table": "ProductModelProductDescription"
 						},
 						"destination": {
-							"fileName": "SalesLTProductModelProductDescription.txt"
+							"fileName": "SalesLTProductModelProductDescription.parquet"
 						}
 					},
 					{
@@ -148,7 +148,7 @@
 							"table": "SalesOrderDetail"
 						},
 						"destination": {
-							"fileName": "SalesLTSalesOrderDetail.txt"
+							"fileName": "SalesLTSalesOrderDetail.parquet"
 						}
 					},
 					{
@@ -156,7 +156,7 @@
 							"table": "SalesOrderHeader"
 						},
 						"destination": {
-							"fileName": "SalesLTSalesOrderHeader.txt"
+							"fileName": "SalesLTSalesOrderHeader.parquet"
 						}
 					}
 				]
