@@ -4,7 +4,7 @@
 		"description": "Dumps the content of the adventureworks db, from sql to datalake in parquet format",
 		"activities": [
 			{
-				"name": "ForEach_cz8",
+				"name": "ForEach_Table",
 				"type": "ForEach",
 				"dependsOn": [],
 				"userProperties": [],
@@ -15,7 +15,7 @@
 					},
 					"activities": [
 						{
-							"name": "Copy_cz8",
+							"name": "Copy_TableToDataLake",
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
