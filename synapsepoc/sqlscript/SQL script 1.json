@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 1",
+	"properties": {
+		"content": {
+			"query": "SELECT TOP (100) [AddressID]\n,[AddressLine1]\n,[AddressLine2]\n,[City]\n,[StateProvince]\n,[CountryRegion]\n,[PostalCode]\n,[rowguid]\n,[ModifiedDate]\n FROM [AdventureWorksIngested].[dbo].[Addresses]",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "AdventureWorksIngested",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

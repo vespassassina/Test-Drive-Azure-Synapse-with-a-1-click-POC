@@ -1,0 +1,22 @@
+{
+	"name": "adworks_copy_lbi",
+	"properties": {
+		"Name": "adworks_copy_lbi",
+		"EntityType": "DATABASE",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"Properties": {
+			"IsSyMSCDMDatabase": true
+		},
+		"Source": {
+			"Provider": "ADLS",
+			"Location": "abfss://public@dtrwol5bg6xm2xfkpoc.dfs.core.windows.net/adworks",
+			"Properties": {
+				"FormatType": "csv",
+				"LinkedServiceName": "AzureDataLakeStorage"
+			}
+		}
+	},
+	"type": "DATABASE"
+}

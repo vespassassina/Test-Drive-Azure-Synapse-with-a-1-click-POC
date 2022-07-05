@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 2",
+	"properties": {
+		"content": {
+			"query": "SELECT TOP (100) [datetime]\n,[country_code]\n,[vendorID]\n,[lpepPickupDatetime]\n,[passengerCount]\n,[tripDistance]\n,[tipAmount]\n,[totalAmount]\n,[tripType]\n,[puYear]\n,[puMonth]\n,[month_num]\n,[day_of_month]\n,[day_of_week]\n,[hour_of_day]\n,[countryOrRegion]\n,[holidayName]\n,[normalizeHolidayName]\n,[isPaidTimeOff]\n,[date]\n,[avg_snowDepth]\n,[avg_temperature]\n,[max_precipTime]\n,[max_precipDepth]\n FROM [nyctaxi].[dbo].[nyc_taxi_holiday_weather]",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "nyctaxi",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
