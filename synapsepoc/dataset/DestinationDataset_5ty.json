@@ -1,0 +1,20 @@
+{
+	"name": "DestinationDataset_5ty",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "TaxiFaresData2",
+				"fileSystem": "public"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
