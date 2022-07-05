@@ -1,0 +1,16 @@
+{
+	"name": "SourceDataset_5ty",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSynapseAnalytics1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "nyc_tlc_yellow_trip_ext"
+		}
+	}
+}
