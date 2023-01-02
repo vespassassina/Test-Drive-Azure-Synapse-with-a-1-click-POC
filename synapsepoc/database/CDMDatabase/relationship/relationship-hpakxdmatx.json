@@ -1,0 +1,26 @@
+{
+	"name": "relationship-hpakxdmatx",
+	"properties": {
+		"Name": "relationship-hpakxdmatx",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "CDMDatabase"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "LedgerType",
+		"ToTableName": "Ledger",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LedgerTypeId",
+				"ToColumnName": "LedgerTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"LedgerType.cdm.json/LedgerType\",\"toEntity\":\"Ledger.cdm.json/Ledger\",\"joinPairs\":[{\"fromAttribute\":\"LedgerTypeId\",\"toAttribute\":\"LedgerTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

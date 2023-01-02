@@ -1,0 +1,26 @@
+{
+	"name": "relationship-uqlqqgzxrr",
+	"properties": {
+		"Name": "relationship-uqlqqgzxrr",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "CDMDatabase"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "LevelOfPrecision",
+		"ToTableName": "FinancialStatementColumn",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LevelOfPrecisionId",
+				"ToColumnName": "LevelOfPrecisionId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"LevelOfPrecision.cdm.json/LevelOfPrecision\",\"toEntity\":\"FinancialStatementColumn.cdm.json/FinancialStatementColumn\",\"joinPairs\":[{\"fromAttribute\":\"LevelOfPrecisionId\",\"toAttribute\":\"LevelOfPrecisionId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

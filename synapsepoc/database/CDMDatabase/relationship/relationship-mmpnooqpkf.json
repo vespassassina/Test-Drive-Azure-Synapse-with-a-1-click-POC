@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mmpnooqpkf",
+	"properties": {
+		"Name": "relationship-mmpnooqpkf",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "CDMDatabase"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "LedgerAccountCategory",
+		"ToTableName": "LedgerAccount",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LedgerAccountCategoryId",
+				"ToColumnName": "LedgerAccountCategoryId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"LedgerAccountCategory.cdm.json/LedgerAccountCategory\",\"toEntity\":\"LedgerAccount.cdm.json/LedgerAccount\",\"joinPairs\":[{\"fromAttribute\":\"LedgerAccountCategoryId\",\"toAttribute\":\"LedgerAccountCategoryId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

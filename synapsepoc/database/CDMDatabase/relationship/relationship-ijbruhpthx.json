@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ijbruhpthx",
+	"properties": {
+		"Name": "relationship-ijbruhpthx",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "CDMDatabase"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "LedgerAccountBalanceType",
+		"ToTableName": "LedgerAccountBalance",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LedgerAccountBalanceTypeId",
+				"ToColumnName": "LedgerAccountBalanceTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"LedgerAccountBalanceType.cdm.json/LedgerAccountBalanceType\",\"toEntity\":\"LedgerAccountBalance.cdm.json/LedgerAccountBalance\",\"joinPairs\":[{\"fromAttribute\":\"LedgerAccountBalanceTypeId\",\"toAttribute\":\"LedgerAccountBalanceTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

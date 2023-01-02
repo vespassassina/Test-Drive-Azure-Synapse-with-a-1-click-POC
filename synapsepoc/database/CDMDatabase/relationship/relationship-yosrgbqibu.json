@@ -1,0 +1,26 @@
+{
+	"name": "relationship-yosrgbqibu",
+	"properties": {
+		"Name": "relationship-yosrgbqibu",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "CDMDatabase"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "LineOfCredit",
+		"ToTableName": "LineOfCreditDraw",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LineOfCreditProvidingPartyId",
+				"ToColumnName": "LineOfCreditProvidingPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"LineOfCredit.cdm.json/LineOfCredit\",\"toEntity\":\"LineOfCreditDraw.cdm.json/LineOfCreditDraw\",\"joinPairs\":[{\"fromAttribute\":\"LineOfCreditProvidingPartyId\",\"toAttribute\":\"LineOfCreditProvidingPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

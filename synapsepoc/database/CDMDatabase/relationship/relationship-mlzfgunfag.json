@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mlzfgunfag",
+	"properties": {
+		"Name": "relationship-mlzfgunfag",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "CDMDatabase"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "FinancialStatementColumn",
+		"ToTableName": "FinancialStatementValue",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "FinancialStatementColumnId",
+				"ToColumnName": "FinancialStatementColumnId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"FinancialStatementColumn.cdm.json/FinancialStatementColumn\",\"toEntity\":\"FinancialStatementValue.cdm.json/FinancialStatementValue\",\"joinPairs\":[{\"fromAttribute\":\"FinancialStatementColumnId\",\"toAttribute\":\"FinancialStatementColumnId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

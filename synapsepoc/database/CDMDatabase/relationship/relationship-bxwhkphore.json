@@ -1,0 +1,26 @@
+{
+	"name": "relationship-bxwhkphore",
+	"properties": {
+		"Name": "relationship-bxwhkphore",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "CDMDatabase"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ExchangeRateType",
+		"ToTableName": "IsoCurrencyConversion",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ExchangeRateTypeId",
+				"ToColumnName": "ExchangeRateTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ExchangeRateType.cdm.json/ExchangeRateType\",\"toEntity\":\"IsoCurrencyConversion.cdm.json/IsoCurrencyConversion\",\"joinPairs\":[{\"fromAttribute\":\"ExchangeRateTypeId\",\"toAttribute\":\"ExchangeRateTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}
