@@ -5,35 +5,29 @@
 		"workspaceName": {
 			"value": "dtrwol5bg6xm2xfkpocws1"
 		},
-		"AzureDataLakeStorage_accountKey": {
-			"value": ""
-		},
-		"AzureDataLakeStorage1_accountKey": {
-			"value": ""
-		},
-		"AzureSqlDatabaseAdvWorks_connectionString": {
-			"value": ""
+		"dtrwol5bg6xm2xfkpocws1-WorkspaceDefaultSqlServer_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:dtrwol5bg6xm2xfkpocws1.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
 		},
 		"TripFaresSynapseAnalyticsLinkedService_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=@{linkedService().SynapseWorkspaceName};Initial Catalog=@{linkedService().SQLDedicatedPoolName};User ID=@{linkedService().SQLLoginUsername}"
+		},
+		"AzureSqlDatabaseAdvWorks_connectionString": {
 			"value": ""
 		},
 		"dtrprotectedstorage_accountKey": {
 			"value": ""
 		},
-		"AnomalyDetector_properties_typeProperties_subscriptionId": {
-			"value": "d2910e0f-a763-4dd8-9c8d-0105ccd0570e"
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
 		},
-		"AzureDataLakeStorage_properties_typeProperties_url": {
+		"AzureDataLakeStorage_accountKey": {
+			"value": ""
+		},
+		"AzureSynapseAnalytics1_connectionString": {
+			"value": ""
+		},
+		"dtrwol5bg6xm2xfkpocws1-WorkspaceDefaultStorage_properties_typeProperties_url": {
 			"value": "https://dtrwol5bg6xm2xfkpoc.dfs.core.windows.net/"
-		},
-		"AzureDataLakeStorage1_properties_typeProperties_url": {
-			"value": "https://dtrwol5bg6xm2xfkpoc.dfs.core.windows.net"
-		},
-		"AzureMLService1_properties_typeProperties_subscriptionId": {
-			"value": "d2910e0f-a763-4dd8-9c8d-0105ccd0570e"
-		},
-		"AzureMLService1_properties_typeProperties_resourceGroupName": {
-			"value": "Synapse2ClickPoc"
 		},
 		"HttpServerTripDataLinkedService_properties_typeProperties_url": {
 			"value": "https://raw.githubusercontent.com/Azure/Test-Drive-Azure-Synapse-with-a-1-click-POC/main/tripDataAndFaresCSV/trip-data.csv"
@@ -41,17 +35,32 @@
 		"HttpServerTripFareDataLinkedService_properties_typeProperties_url": {
 			"value": "https://raw.githubusercontent.com/Azure/Test-Drive-Azure-Synapse-with-a-1-click-POC/main/tripDataAndFaresCSV/fares-data.csv"
 		},
-		"TextAnalytics_properties_typeProperties_subscriptionId": {
+		"keyVaultLinkedservice_properties_typeProperties_baseUrl": {
+			"value": "@{concat('https://',linkedService().keyVaultName,'.vault.azure.net/')}"
+		},
+		"AzureMLService1_properties_typeProperties_subscriptionId": {
 			"value": "d2910e0f-a763-4dd8-9c8d-0105ccd0570e"
+		},
+		"AzureMLService1_properties_typeProperties_resourceGroupName": {
+			"value": "Synapse2ClickPoc"
 		},
 		"TripFaresDataLakeStorageLinkedService_properties_typeProperties_url": {
 			"value": "@{concat('https://',linkedService().datalakeAccountName,'.dfs.core.windows.net')}"
 		},
+		"TextAnalytics_properties_typeProperties_subscriptionId": {
+			"value": "d2910e0f-a763-4dd8-9c8d-0105ccd0570e"
+		},
+		"AnomalyDetector_properties_typeProperties_subscriptionId": {
+			"value": "d2910e0f-a763-4dd8-9c8d-0105ccd0570e"
+		},
 		"dtrprotectedstorage_properties_typeProperties_url": {
 			"value": "https://dtrprotectedstorage.dfs.core.windows.net"
 		},
-		"keyVaultLinkedservice_properties_typeProperties_baseUrl": {
-			"value": "@{concat('https://',linkedService().keyVaultName,'.vault.azure.net/')}"
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://dtrwol5bg6xm2xfkpoc.dfs.core.windows.net"
+		},
+		"AzureDataLakeStorage_properties_typeProperties_url": {
+			"value": "https://dtrwol5bg6xm2xfkpoc.dfs.core.windows.net/"
 		}
 	}
 }
