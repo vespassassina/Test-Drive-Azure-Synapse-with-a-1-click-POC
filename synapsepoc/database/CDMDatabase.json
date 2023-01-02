@@ -1,0 +1,22 @@
+{
+	"name": "CDMDatabase",
+	"properties": {
+		"Name": "CDMDatabase",
+		"EntityType": "DATABASE",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"Properties": {
+			"IsSyMSCDMDatabase": true
+		},
+		"Source": {
+			"Provider": "ADLS",
+			"Location": "abfss://dlsdtrpocfs1@dtrwol5bg6xm2xfkpoc.dfs.core.windows.net/CDMDatabase",
+			"Properties": {
+				"FormatType": "csv",
+				"LinkedServiceName": "AzureDataLakeStorage"
+			}
+		}
+	},
+	"type": "DATABASE"
+}
